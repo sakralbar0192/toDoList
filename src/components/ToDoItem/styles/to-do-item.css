@@ -1,0 +1,106 @@
+.to-do-item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 380px;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.to-do-item label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+.to-do-item label::before {
+  content: "";
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #00C12B;
+}
+
+.to-do-item label:hover::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.to-do-item input {
+  display: none;
+}
+
+.to-do-item span {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0 10px;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.to-do-item button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.to-do-item button:hover svg {
+  fill: #FF7D01;
+}
+
+.to-do-item--in-work {
+  background-color: #25D500;
+}
+
+.to-do-item--in-work label:hover::before {
+  background-color: #FFB773;
+}
+
+.to-do-item--in-work button:hover svg {
+  fill: #FF7D01;
+}
+
+.to-do-item--in-plan {
+  background-color: #FF7D01;
+}
+
+.to-do-item--in-plan label:hover::before {
+  background-color: #25D500;
+}
+
+.to-do-item--in-plan button:hover svg {
+  fill: #25D500;
+}
+
+.to-do-item--true label {
+  display: none;
+}

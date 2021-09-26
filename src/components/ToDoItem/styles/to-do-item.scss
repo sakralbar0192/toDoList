@@ -1,0 +1,113 @@
+.to-do-item {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 1s ease;
+
+    label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;  
+        width: 25px;
+        height: 25px;      
+
+        &::before {
+            content: "";
+            position: absolute;
+            box-sizing: border-box;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid #00C12B;
+        }
+
+        &:hover {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    input {
+        display: none;
+    }
+
+    span {
+        flex-grow: 1;
+        padding: 0 10px;
+        font-family: "Poppins";
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        text-align: center;
+        color: #ffffff;
+        overflow: hidden;
+
+    }
+
+    button {
+        background-color: transparent;
+        border: 0; cursor: pointer;
+
+        &:hover {
+            svg {
+                fill: #FF7D01;
+            }
+        }
+    }
+
+    &--in-work {
+        background-color: #25D500;
+
+        label {
+            &:hover {
+                &::before {
+                    background-color: #FFB773;
+                }
+            }
+        }
+
+        button {
+            &:hover {
+                svg {
+                    fill: #FF7D01;
+                }
+            }
+        }
+    }
+
+    &--in-plan {
+        background-color: #FF7D01;
+
+        label {
+            &:hover {
+                &::before {
+                    background-color: #25D500;
+                }
+            }
+        }
+
+        button {
+            &:hover {
+                svg {
+                    fill: #25D500;
+                }
+            }
+        }
+    }
+
+    &--true {
+        label {
+            display: none;
+        }
+    }
+}

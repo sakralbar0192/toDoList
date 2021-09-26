@@ -1,0 +1,97 @@
+@import './fonts';
+
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #081073;   
+}
+
+.app__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    width: 450px;
+    height: 450px;
+    border-radius: 5%;
+    background-color: #60BDCE;
+}
+
+.app__title-container {
+    margin: 0 0 10px;
+}
+
+.app__inner-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    width: 100%;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input[type="checkbox"] + label {
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 50px;
+        margin: 10px 0 0;
+        background-color: #1924B1;
+        border-radius: 10px;
+
+        span, 
+        &::after {
+            color: #ffffff;
+        }
+
+        &:hover {
+            background-color: #7279D8;
+        }
+    }
+
+    input[type="checkbox"]:checked {
+        & + label {
+            position: absolute;
+            bottom: 50px;
+            right: 100px;
+            width: auto;
+            height: auto;
+            margin: 0;
+            background-color: transparent;
+            span {
+                display: none;
+            }
+
+            &::after {
+                content: "Cancel";                
+            }
+
+            &:hover {
+                &::after {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &~ .app__tabs-container {
+            display: none;
+        }
+
+        &~ .app__add-new-to-do-form-container {
+            display: block
+        }
+    }
+}
+
+.app__add-new-to-do-form-container {
+    display: none;    
+}
+
